@@ -1,0 +1,231 @@
+.keyboard{
+	width: 70%;
+	margin: auto;
+    padding: 10px;
+}
+a{
+	text-decoration:none;
+	color: white;
+}
+.black-font{
+	color: black;
+}
+.topic{
+	border: 2px solid black;
+	width: 200px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
+.p{
+	display: flex;
+	justify-content: center;
+}
+.t{
+	margin-top: 10px;
+}
+.proj{
+	border: none!important;
+	width: 400px;
+	justify-content: left;
+	margin-left: 10px;
+}
+.e{
+	justify-content: center;
+	display: flex;
+}
+.exp{
+	display: flex;
+	width: 378px;
+}
+.column{
+	display: flex;
+	flex-direction: column;
+}
+.container {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  perspective: 400px;
+  display: inline-block;
+}
+.row{
+	width: 100%;
+}
+.left{
+	margin-left: 100px;
+}
+.min{
+	margin-left: 20px;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.cube figure {
+  margin: 0;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.letter {
+	font-size: 20px;
+	justify-content: center;
+	display: flex;
+	width: 20px;
+	height: 20px;
+	padding-top: 25px;
+}
+
+.typed {
+	background-color: black;
+	color: white;
+	border: 1px solid white!important;
+}
+.cube .front  { transform: rotateY(   0deg ) translateZ( 75px ); justify-content: center; display: flex;}
+.cube .back   { transform: rotateX( 180deg ) translateZ( 40px ); }
+.cube .right  { transform: rotateY(  90deg ) translateZ( 40px ); }
+.cube .left   { transform: rotateY( -90deg ) translateZ( 40px ); }
+.cube .top    { transform: rotateX(  90deg ) translateZ( 40px ); }
+.cube .bottom { transform: rotateX( -90deg ) translateZ( 40px ); }
+
+.cube.show-front  { transform: translateZ( -40px ) rotateY(    0deg ); }
+.cube.show-back   { transform: translateZ( -40px ) rotateX( -180deg ); }
+.cube.show-right  { transform: translateZ( -40px ) rotateY(  -90deg ); }
+.cube.show-left   { transform: translateZ( -40px ) rotateY(   90deg ); }
+.cube.show-top    { transform: translateZ( -40px ) rotateX(  -90deg ); }
+.cube.show-bottom { transform: translateZ( -40px ) rotateX(   90deg ); }
+
+.cube { transform: translateZ( -100px ); }
+.cube { transition: transform 1s; }
+body{
+    margin: 0;
+}
+.back{
+	height: 100%;
+}
+.cont{
+	justify-content: center;
+	display: flex;
+}
+.box-title{
+	margin: 30px;
+	border:5px solid black;
+	width: 400px;
+	font-family: Noto Sans, sans-serif;
+	height: 120px;
+	font-size: 50px;
+	text-align: center;
+	background-color: white;
+}
+.description{
+	font-family: Noto Sans, sans-serif;
+	font-size: 20px;
+	margin-top: 15px;
+	display: flex;
+}
+
+.sep{
+	margin-top: 30px;
+}
+.i{
+	display: flex;
+	margin: 25px;
+	font-size: 40px;
+	width:50px;
+	height: 50px;
+}
+.icon{
+	width: 70px;
+	height: 50px;
+	margin: 15px;
+	padding-top: 17px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 30px;
+	border: 3px solid black;
+	font-family: Noto Sans, sans-serif;
+}
+.nav-bar{
+	width:100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	font-family: Noto Sans, sans-serif;
+}
+.contact{
+	margin-top: 100px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.comm{
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	color:white;
+	padding-top: 20px;
+	font-size: 25px;
+	font-family: Noto Sans, sans-serif;
+}
+.tab{
+	width: 200px;
+	height: 50px;
+	margin: 20px;
+	padding-top: 17px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 30px;
+}
+.tab:hover{
+	background-color: black;
+	color:white	;
+}
+.image{
+	width: 400px;
+	height: 400px;
+	background: url(IMG_0940.jpg) 60% 60% no-repeat;
+	background-size: contain;
+}
+
+.img-container {
+    width: 360px;
+    height: 290px;
+    overflow: hidden;
+    margin-left: 200px;
+    margin-top: 100px;
+    display: inline-block;
+}
+.img-container img {
+    height: 100%;
+}
+.txt{
+	width: 100%;
+	display: inline-block;
+	font-family: Noto Sans, sans-serif;
+	bottom: 20px;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.content{
+	display: flex;
+	height: 500px;
+	width: 500px;
+	bottom: 49px;
+	justify-content: center;
+	margin-left: 30px;
+}
