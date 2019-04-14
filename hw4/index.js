@@ -8,11 +8,12 @@ const HOSTED_URLS = {
 
 const examples = {
   'example1':
-      'Alice was beginning to get very tired of sitting by her sister on the bank.',
+      'But there seems an indelicacy in directing his attentions towards her so soon after this event',
   'example2':
-      'Buda-Pesth seems a wonderful place.',
+      'I was still cold when under one of the trees I found a huge cloak, with which I covered myself, and sat down upon the ground.',
   'example3':
-      'Scepticism was as much the result of knowledge, as knowledge is of scepticism.'      
+      'The frightful deeds that were to be soon done, were probably unimagined at that time in the brains of the doers.',
+  'example4': 'Be off, or I’ll kick you down stairs!'
 };
 
 function status(statusText) {
