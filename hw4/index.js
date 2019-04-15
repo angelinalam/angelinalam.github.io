@@ -127,25 +127,15 @@ class Classifier {
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
     for (let i = 0; i < inputText.length; ++i) {
       const word = inputText[i];
-<<<<<<< HEAD
       if(this.wordIndex[word] && !this.wordIndex[word].isNan() && this.wordIndex[word] <= this.vocabulary_size){
         inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
       i++;
-=======
-      inputBuffer.set(this.wordIndex[word], 0, i);
-      //console.log(word, this.wordIndex[word], inputBuffer);
->>>>>>> 1428663643b182fabca88d5d2f52844f5ef16804
     }
     console.log(inputBuffer)
     const input = inputBuffer.toTensor();
-<<<<<<< HEAD
     console.log(inputBuffer);
-=======
-    console.log(input);
-    console.log(this.wordIndex);
->>>>>>> 1428663643b182fabca88d5d2f52844f5ef16804
     status('Running inference');
     const beginMs = performance.now();
     const predictOut = this.model.predict(input);
