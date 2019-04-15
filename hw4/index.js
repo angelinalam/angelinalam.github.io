@@ -127,7 +127,9 @@ class Classifier {
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
     for (let i = 0; i < inputText.length; ++i) {
       const word = inputText[i];
-      if(this.wordIndex[word] && !isNaN(this.wordIndex[word]) && this.wordIndex[word] <= this.vocabulary_size){
+      console.log(this.wordIndex[word])
+      console.log(isNaN(this.wordIndex[word]))
+      if(this.wordIndex[word] && this.wordIndex[word] <= this.vocabulary_size){
         inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
