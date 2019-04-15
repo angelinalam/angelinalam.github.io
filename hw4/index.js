@@ -116,12 +116,11 @@ class Classifier {
     this.maxLen = metadata['max_len'];
     console.log('maxLen = ' + this.maxLen);
     this.wordIndex = metadata['word_index']
+    this.vocabulary_size = metadata['vocabulary_size']
   }
 
   predict(text) {
-    // Convert to lower case and remove all punctuations.
-    const inputText =
-        text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
+    // Convert to lower case and remove all punctuations. 
     // Look up word indices.
     console.log(inputText)
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
@@ -130,8 +129,21 @@ class Classifier {
       inputBuffer.set(this.wordIndex[word], 0, i);
       //console.log(word, this.wordIndex[word], inputBuffer);
     }
+    const x = tf.buffer([1, this.maxLen], 'float32');
+    let i = 0;
+    let j = 0;
+    while (i < inputText.length){
+      const word = inputText[i];
+      if(this.wordIndex[word] && this.wordIndex[word] <= this.vocabulary_size){
+        x.set(this.wordIndex[word], j);
+        j++;
+      }
+      i++;
+    }
     console.log(inputBuffer)
     const input = inputBuffer.toTensor();
+    const y = x.toTensor();
+    console.log(y)
     console.log(input);
     console.log(this.wordIndex);
     status('Running inference');
