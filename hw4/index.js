@@ -135,7 +135,7 @@ class Classifier {
     while (i < inputText.length){
       const word = inputText[i];
       if(this.wordIndex[word] && this.wordIndex[word] <= this.vocabulary_size){
-        x.set(this.wordIndex[word], j);
+        x.set(this.wordIndex[word],0, j);
         j++;
       }
       i++;
