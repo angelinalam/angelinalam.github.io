@@ -129,7 +129,7 @@ class Classifier {
     let j = 0;
     while(i < inputText.length){
       const word = inputText[i];
-      if(this.wordIndex[word] && isNaN(this.wordIndex[word]) && this.wordIndex[word] <= this.vocabulary_size){
+      if(this.wordIndex[word] && !isNaN(this.wordIndex[word]) && this.wordIndex[word] <= this.vocabulary_size){
         inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
