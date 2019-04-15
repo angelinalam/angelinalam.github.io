@@ -141,6 +141,7 @@ class Classifier {
       i++;
     }
     console.log(inputBuffer)
+    console.log(x)
     const input = inputBuffer.toTensor();
     const y = x.toTensor();
     console.log(y)
