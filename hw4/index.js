@@ -116,6 +116,7 @@ class Classifier {
     this.maxLen = metadata['max_len'];
     console.log('maxLen = ' + this.maxLen);
     this.wordIndex = metadata['word_index']
+    console.log(this.wordIndex);
   }
 
   predict(text) {
