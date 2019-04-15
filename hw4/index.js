@@ -116,7 +116,6 @@ class Classifier {
     this.maxLen = metadata['max_len'];
     console.log('maxLen = ' + this.maxLen);
     this.wordIndex = metadata['word_index']
-    console.log(this.wordIndex);
   }
 
   predict(text) {
@@ -132,7 +131,7 @@ class Classifier {
     }
     const input = inputBuffer.toTensor();
     console.log(input);
-
+    console.log(this.wordIndex);
     status('Running inference');
     const beginMs = performance.now();
     const predictOut = this.model.predict(input);
