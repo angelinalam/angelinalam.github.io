@@ -123,6 +123,7 @@ class Classifier {
     // Convert to lower case and remove all punctuations. 
     // Look up word indices.
     const inputText = text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
+    console.log(inputText)
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
     // for (let i = 0; i < inputText.length; ++i) {
     //   const word = inputText[i];
@@ -139,7 +140,6 @@ class Classifier {
       }
       i++;
     }
-    console.log(inputBuffer)
     const input = inputBuffer.toTensor();
     console.log(input);
     status('Running inference');
