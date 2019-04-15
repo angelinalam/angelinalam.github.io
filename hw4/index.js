@@ -124,29 +124,24 @@ class Classifier {
     // Look up word indices.
     const inputText = text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
-    for (let i = 0; i < inputText.length; ++i) {
-      const word = inputText[i];
-      inputBuffer.set(this.wordIndex[word], 0, i);
-      //console.log(word, this.wordIndex[word], inputBuffer);
-    }
-    const x = tf.buffer([1, this.maxLen], 'float32');
+    // for (let i = 0; i < inputText.length; ++i) {
+    //   const word = inputText[i];
+    //   inputBuffer.set(this.wordIndex[word], 0, i);
+    //   //console.log(word, this.wordIndex[word], inputBuffer);
+    // }
     let i = 0;
     let j = 0;
     while (i < inputText.length){
       const word = inputText[i];
       if(this.wordIndex[word] && this.wordIndex[word] <= this.vocabulary_size){
-        x.set(this.wordIndex[word],0, j);
+        inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
       i++;
     }
     console.log(inputBuffer)
-    console.log(x)
     const input = inputBuffer.toTensor();
-    const y = x.toTensor();
-    console.log(y)
     console.log(input);
-    console.log(this.wordIndex);
     status('Running inference');
     const beginMs = performance.now();
     const predictOut = this.model.predict(input);
