@@ -125,11 +125,11 @@ class Classifier {
     // Look up word indices.
     console.log(inputText)
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
-    for (let i = 0; i < inputText.length; ++i) {
+    let i = 0;
+    let j = 0;
+    while(i < inputText.length){
       const word = inputText[i];
-      console.log(this.wordIndex[word])
-      console.log(isNaN(this.wordIndex[word]))
-      if(this.wordIndex[word] && this.wordIndex[word] <= this.vocabulary_size){
+      if(this.wordIndex[word] && isNaN(this.wordIndex[word]) && this.wordIndex[word] <= this.vocabulary_size){
         inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
