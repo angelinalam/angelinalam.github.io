@@ -116,32 +116,36 @@ class Classifier {
     this.maxLen = metadata['max_len'];
     console.log('maxLen = ' + this.maxLen);
     this.wordIndex = metadata['word_index']
-    this.vocabulary_size = metadata['vocabulary_size']
   }
 
   predict(text) {
-    // Convert to lower case and remove all punctuations. 
+    // Convert to lower case and remove all punctuations.
+    const inputText =
+        text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     // Look up word indices.
-    const inputText = text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     console.log(inputText)
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
-    // for (let i = 0; i < inputText.length; ++i) {
-    //   const word = inputText[i];
-    //   inputBuffer.set(this.wordIndex[word], 0, i);
-    //   //console.log(word, this.wordIndex[word], inputBuffer);
-    // }
-    let i = 0;
-    let j = 0;
-    while (i < inputText.length){
+    for (let i = 0; i < inputText.length; ++i) {
       const word = inputText[i];
+<<<<<<< HEAD
       if(this.wordIndex[word] && !this.wordIndex[word].isNan() && this.wordIndex[word] <= this.vocabulary_size){
         inputBuffer.set(this.wordIndex[word],0, j);
         j++;
       }
       i++;
+=======
+      inputBuffer.set(this.wordIndex[word], 0, i);
+      //console.log(word, this.wordIndex[word], inputBuffer);
+>>>>>>> 1428663643b182fabca88d5d2f52844f5ef16804
     }
+    console.log(inputBuffer)
     const input = inputBuffer.toTensor();
+<<<<<<< HEAD
     console.log(inputBuffer);
+=======
+    console.log(input);
+    console.log(this.wordIndex);
+>>>>>>> 1428663643b182fabca88d5d2f52844f5ef16804
     status('Running inference');
     const beginMs = performance.now();
     const predictOut = this.model.predict(input);
