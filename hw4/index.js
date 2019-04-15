@@ -122,7 +122,7 @@ class Classifier {
   predict(text) {
     // Convert to lower case and remove all punctuations. 
     // Look up word indices.
-    console.log(inputText)
+    const inputText = text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
     for (let i = 0; i < inputText.length; ++i) {
       const word = inputText[i];
