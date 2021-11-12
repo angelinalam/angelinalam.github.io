@@ -1,3 +1,3 @@
 ### Angie Lam 
 
-## Frontend Stuff
+Frontend stuff. Based in NYC & LA. 
