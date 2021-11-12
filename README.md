@@ -1,1 +1,3 @@
-### Angelina Lam
+### Angie Lam 
+
+## Frontend Stuff
